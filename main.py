@@ -53,7 +53,7 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_LEFT_UP,   self.OnLabelUp)
         self.label.SetCursor(wx.Cursor(wx.CURSOR_SIZENWSE))
         self.label.SetFont(wx.Font(8, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
-        
+
         box = wx.BoxSizer(wx.VERTICAL)
         box.Add(self.panel, 1, flag = wx.EXPAND)
         box.Add((10,1), 0)
@@ -273,12 +273,12 @@ class MyFrame(wx.Frame):
         now = time.time()
         ts = 0
 
-        scale = self.scale * BYTES_PER_K
+        self.autoScale = self.scale * BYTES_PER_K
         for d in self.data:
-            if d[1] > scale:
-              scale = d[1]
-            if d[2] > scale:
-              scale = d[2]
+            if d[1] > self.autoScale:
+              self.autoScale = d[1]
+            if d[2] > self.autoScale:
+              self.autoScale = d[2]
 
         for d in self.data:
             ts = d[0]
@@ -290,8 +290,8 @@ class MyFrame(wx.Frame):
           # For the graph to move right to left
             x = ts - now + 1 + w
             y0  = h
-            yDl = y0 - dl * h / (scale)
-            yUl = y0 - ul * h / (scale)
+            yDl = y0 - dl * h / (self.autoScale)
+            yUl = y0 - ul * h / (self.autoScale)
             
             if dl < ul:
                 dc.SetPen(self.olPen)
@@ -313,7 +313,7 @@ class MyFrame(wx.Frame):
         self.data = results[1]
         self.reInitBuffer = True
         self.panel.Refresh()
-        self.label.SetLabel(self.FormatAmounts(results[0][0], results[0][1]))
+        self.label.SetLabel('['+ str(int(self.autoScale / BYTES_PER_K)) + ' KB]    ' + self.FormatAmounts(results[0][0], results[0][1]))
 
 class TrayIcon(wx.adv.TaskBarIcon):  
     def __init__(self, parent, menu, icon):  
