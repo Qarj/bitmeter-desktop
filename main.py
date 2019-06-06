@@ -273,6 +273,13 @@ class MyFrame(wx.Frame):
         now = time.time()
         ts = 0
 
+        scale = 1024
+        for d in self.data:
+            if d[1] > scale:
+              scale = d[1]
+            if d[2] > scale:
+              scale = d[2]
+
         for d in self.data:
             ts = d[0]
             dl = d[1]
@@ -283,8 +290,10 @@ class MyFrame(wx.Frame):
           # For the graph to move right to left
             x = ts - now + 1 + w
             y0  = h
-            yDl = y0 - dl * h / (self.scale * BYTES_PER_K)
-            yUl = y0 - ul * h / (self.scale * BYTES_PER_K)
+#            yDl = y0 - dl * h / (self.scale * BYTES_PER_K)
+#            yUl = y0 - ul * h / (self.scale * BYTES_PER_K)
+            yDl = y0 - dl * h / (scale)
+            yUl = y0 - ul * h / (scale)
             
             if dl < ul:
                 dc.SetPen(self.olPen)
