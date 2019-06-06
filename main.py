@@ -269,6 +269,7 @@ class MyFrame(wx.Frame):
     def DrawLines(self, dc):
       # Draw the graph using the current upload/download values
         h = self.panel.GetSize().height
+        w = self.panel.GetSize().width
         now = time.time()
         ts = 0
 
@@ -277,7 +278,10 @@ class MyFrame(wx.Frame):
             dl = d[1]
             ul = d[2]
             
-            x = now - ts - 1
+          # For the graph to move left to right
+          # x = now - ts - 1
+          # For the graph to move right to left
+            x = ts - now + 1 + w
             y0  = h
             yDl = y0 - dl * h / (self.scale * BYTES_PER_K)
             yUl = y0 - ul * h / (self.scale * BYTES_PER_K)
