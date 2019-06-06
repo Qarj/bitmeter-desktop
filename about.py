@@ -29,7 +29,7 @@ class AboutDialog(wx.Dialog):
         linkFont = wx.Font(10, wx.SWISS, wx.NORMAL, wx.NORMAL)
         linkFont.SetUnderlined(True)
         linkLabel.SetForegroundColour('blue')
-        linkLabel.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
+        linkLabel.SetCursor(wx.Cursor(wx.CURSOR_HAND))
         linkLabel.SetFont(linkFont)
         linkLabel.Bind(wx.EVT_LEFT_UP, self.OnCodeboxLinkClick)
 
@@ -50,7 +50,7 @@ class AboutDialog(wx.Dialog):
 
         donateLabel = wx.StaticText(self, -1, _("Donate"))
         donateLabel.SetForegroundColour('blue')
-        donateLabel.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
+        donateLabel.SetCursor(wx.Cursor(wx.CURSOR_HAND))
         donateLabel.SetFont(linkFont)
         donateLabel.Bind(wx.EVT_LEFT_UP, self.OnDonateLinkClick)
         

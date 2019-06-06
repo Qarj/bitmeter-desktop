@@ -6,15 +6,8 @@ This client provides a floating graph window on the desktop, displaying data cap
 
 The source code for this utility should provide a useful reference for for anyone wishing to develop other BitMeter OS clients - Python code is quite easy to understand even if you haven't used the language before.
 
-# This fork has fixes for wxPython 4
+# This fork has updates to work with wxPython 4
 
-Still need to address deprecations
-```
-main.py:54: wxPyDeprecationWarning: Using deprecated class. Use Cursor instead.
-  self.label.SetCursor(wx.StockCursor(wx.CURSOR_SIZENWSE))
-main.py:262: wxPyDeprecationWarning: Call to deprecated item EmptyBitmap. Use :class:`wx.Bitmap` instead
-  self.buffer = wx.EmptyBitmap(size.width, size.height)
-```
 
 # Installation on Ubuntu 18.04
 

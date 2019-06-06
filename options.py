@@ -35,7 +35,7 @@ class OptionsDialog(wx.Dialog):
             self.opacitySlider.SetMin(10)
             self.opacitySlider.SetMax(100)
             self.opacitySlider.SetValue(self.prefs.GetNum('opacity'))
-            self.opacitySlider.SetTickFreq(5,1)
+            self.opacitySlider.SetTickFreq(5)
         
       # Float checkbox
         floatLabel = wx.StaticText(self, -1, _("Float:"))
@@ -158,7 +158,7 @@ class OptionsDialog(wx.Dialog):
         self.prefs.SetObj('scale', self.scaleTxt.GetValue())
         if self.capabilities['opacity']:
             self.prefs.SetObj('opacity', self.opacitySlider.GetValue())
-            
+
         self.prefs.SetObj('float', self.floatChk.GetValue())
         if self.capabilities['clickthru']:
             self.prefs.SetObj('clickthru', self.clickThruChk.GetValue())

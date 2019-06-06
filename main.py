@@ -119,7 +119,7 @@ class MyFrame(wx.Frame):
         
         self.Bind(wx.EVT_CONTEXT_MENU, self.OnShowPopup)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
-        
+
     def ToggleGraph(self, event):
       # Show/Hide the graph
         self.Show(not self.IsShown())
