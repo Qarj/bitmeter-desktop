@@ -359,7 +359,7 @@ class BitMeterApp(wx.App):
         defaultPrefs['dlcolour']  = '(255,0,0)'
         defaultPrefs['ulcolour']  = '(0,255,0)'
         defaultPrefs['olcolour']  = '(255,255,0)'
-        defaultPrefs['bgcolour']  = '(255,255,255)'
+        defaultPrefs['bgcolour']  = '(0,0,0)'
         defaultPrefs['size']      = '(150,85)'
         defaultPrefs['position']  = '(100,100)'
         defaultPrefs['scale']     = '1000'

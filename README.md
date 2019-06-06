@@ -38,10 +38,20 @@ sudo find . -type d -exec chmod a+rwx {} \;
 sudo find . -type f -exec chmod a+rw {} \;
 ```
 
-Set up desktop icon
+### Set up desktop icon
 ```
 cp bitmeter-desktop.desktop ~/Desktop
 chmod +x ~/Desktop/bitmeter-desktop.desktop
+```
+
+### Start on system boot
+```
+crontab -e
+```
+
+Add this line at the end
+```
+@reboot /usr/local/bin/bitmeter-desktop/main.py
 ```
 
 
