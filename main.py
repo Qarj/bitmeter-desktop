@@ -139,7 +139,7 @@ class MyFrame(wx.Frame):
     
     def OnMenuWebInterface(self, event):
       # Open the web interface in the default browser
-        webbrowser.open("http://localhost:" + str(self.webPort))
+        webbrowser.open("http://localhost:" + str(self.webPort) + "/index.html")
     
     def OnMenuAbout(self, event):
       # Open the About dialog
