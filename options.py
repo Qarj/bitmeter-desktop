@@ -17,7 +17,7 @@ class OptionsDialog(wx.Dialog):
         self.PrefsUpdated = PrefsUpdated
         
       # The 'Scale' value fields
-        scaleLabel = wx.StaticText(self, -1, _("Scale:"))
+        scaleLabel = wx.StaticText(self, -1, _("Minimum Scale:"))
         self.scaleTxt = wx.TextCtrl(self, -1, str(prefs.Get('scale')), size=(100, -1))
         self.scaleTxt.Bind(wx.EVT_CHAR, self.onScaleChar) 
         
