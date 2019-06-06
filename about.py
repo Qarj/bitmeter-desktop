@@ -7,6 +7,7 @@ This module manages the About dialog window of the BitMeter OS desktop client
 import wx
 import platform
 import gettext
+import webbrowser
 
 DONATE_URL  = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9675111"
 CODEBOX_URL = "http://codebox.org.uk/bitmeteros"
