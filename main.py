@@ -169,7 +169,7 @@ class MyFrame(wx.Frame):
     def OnPrefsUpdated(self):
       # Callback invoked from the Options dialog when the user clicks 'OK'
         if self.capabilities['opacity']:
-            self.SetTransparent(self.prefs.GetNum('opacity') * 2.55)
+            self.SetTransparent(int(self.prefs.GetNum('opacity') * 2.55))
             
         self.SetBackgroundColour(self.prefs.GetCol('bgcolour')) 
         
@@ -348,7 +348,7 @@ class BitMeterApp(wx.App):
           # Linux
             dbPath = dbPath or "/var/lib/bitmeter/bitmeter.db"
             capabilities['clickthru'] = False
-            capabilities['opacity']   = False
+            capabilities['opacity']   = True
         
         if not os.path.exists(dbPath):
             print (_('Database file not found') + ': ' + dbPath)
