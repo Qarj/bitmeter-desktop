@@ -51,7 +51,7 @@ class MyFrame(wx.Frame):
         self.label.Bind(wx.EVT_LEFT_DOWN, self.OnLabelDown)
         self.Bind(wx.EVT_MOTION,    self.OnLabelMove)
         self.Bind(wx.EVT_LEFT_UP,   self.OnLabelUp)
-        self.label.SetCursor(wx.StockCursor(wx.CURSOR_SIZENWSE))
+        self.label.SetCursor(wx.Cursor(wx.CURSOR_SIZENWSE))
         self.label.SetFont(wx.Font(8, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
         
         box = wx.BoxSizer(wx.VERTICAL)
@@ -259,7 +259,7 @@ class MyFrame(wx.Frame):
     def InitBuffer(self):
       # Draw the next graph to be displayed onto the in-memory buffer
         size = self.panel.GetSize()
-        self.buffer = wx.EmptyBitmap(size.width, size.height)
+        self.buffer = wx.Bitmap(size.width, size.height)
         dc = wx.BufferedDC(None, self.buffer)
         dc.SetBackground(wx.Brush(self.GetBackgroundColour()))
         dc.Clear()
