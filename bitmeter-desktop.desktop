@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/usr/local/bin/bitmeter-desktop/main.py
+Icon=/usr/local/bin/bitmeter-desktop/main.py
+Path=/usr/local/bin/bitmeter-desktop/
+Name=BitMeter-Desktop
+Comment=BitMeter-Desktop
+Categories=Utility;Application;
