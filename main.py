@@ -18,7 +18,7 @@ from about import AboutDialog
 from db import Db
 from options import OptionsDialog
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 BYTES_PER_K=1024
 _=gettext.gettext
 
@@ -127,10 +127,14 @@ class MyFrame(wx.Frame):
             self.showHideMain.SetText( _('Hide Graph'))
         else:
             self.showHideMain.SetText( _('Show Graph'))
+
+    def FormatScale(self, scale):
+      # This value gets displayed to the left of the download and upload amounts
+        return "{:,}".format(int(scale / BYTES_PER_K)).replace(',', ' ') + ' KB'
        
     def FormatAmounts(self, dl, ul):
       # This value gets displayed below the main graph
-        return "DL: %.2f UL: %.2f" % (float(dl)/1000, float(ul)/1000)
+        return "D: %.2f U: %.2f" % (float(dl)/1000, float(ul)/1000)
         
     def OnShowPopup(self, event):
         pos = event.GetPosition()
@@ -313,7 +317,8 @@ class MyFrame(wx.Frame):
         self.data = results[1]
         self.reInitBuffer = True
         self.panel.Refresh()
-        self.label.SetLabel('['+ str(int(self.autoScale / BYTES_PER_K)) + ' KB]    ' + self.FormatAmounts(results[0][0], results[0][1]))
+
+        self.label.SetLabel(self.FormatScale(self.autoScale) + '    ' + self.FormatAmounts(results[0][0], results[0][1]))
 
 class TrayIcon(wx.adv.TaskBarIcon):  
     def __init__(self, parent, menu, icon):  
