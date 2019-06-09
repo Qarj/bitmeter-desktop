@@ -8,9 +8,9 @@ Tested with Ubuntu 18.04.
 
 Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experimental, only works with v0.7.6 of BitMeter OS)
 
-![Screenshot1][resources/Screenshot1.png]
-![Screenshot2][resources/Screenshot2.png]
-![Screenshot3][resources/Screenshot3.png]
+![Screenshot1](resources/Screenshot1.png?raw=true "Screenshot 1")
+![Screenshot2](resources/Screenshot2.png?raw=true "Screenshot 2")
+![Screenshot3](resources/Screenshot3.png?raw=true "Screenshot 3")
 
 # Installation on Ubuntu 18.04
 
