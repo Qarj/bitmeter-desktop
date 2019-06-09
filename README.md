@@ -13,11 +13,31 @@ Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experim
 ![Screenshot3](resources/Screenshot3.png?raw=true "Screenshot 3")
 ![Screenshot4](resources/Screenshot4.png?raw=true "Screenshot 4 - Transparency")
 
+### Diferences to the official `bitmeteros-python-client` version 0.1.0
+
+- autoscales the graph
+    - the autoscale option value is now the minimum scale shown (default 1 KB)
+    - the current scale is displayed on the bottom left of the graph e.g. 70 KB
+- graph moves right to left (original moves left to right)
+- transparency enabled for Linux
+- desktop shortcut included with icon
+- default background colour is now black
+- supports wxPython 4.0.6
+- all links fixed
+    - `'webbrowser' is not defined for bitmeteros url` error resolved
+    - link to web interface
+
 # Installation on Ubuntu 18.04
 
-This program is written for Python 2.7.
+First download BitMeter OS v0.7.6 from https://codebox.net/pages/bitmeteros-downloads
 
-Install wxPython dependencies - accept MS Eula by using TAB key and ENTER
+Then double click on the `.deb` file to install it. 
+
+Test by navigating to http://localhost:2605/index.html
+
+### Install wxPython 4 dependencies
+
+accept MS Eula by using TAB key and ENTER
 ```
 sudo apt install make gcc libgtk-3-dev libwebkitgtk-dev libwebkitgtk-3.0-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python-gst-1.0 python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
 ```
@@ -32,7 +52,7 @@ Takes 5-10 mins, installed version 4.0.6 - June 2019
 sudo pip install wxpython
 ```
 
-Clone project
+### Clone project
 ```
 cd /usr/local/bin
 sudo git clone https://github.com/Qarj/bitmeter-desktop.git
@@ -63,8 +83,9 @@ The only way I can get transparency to work on Ubuntu 18.04 is by right-clicking
 on the graph, select Options, change the Opacity % to a _*different*_ value then click
 OK (bottom left button). It will be remembered for the rest of the session only.
 
-# Start from command line
+# Reference
 
+### Start from command line
 ```
 python /usr/local/bin/bitmeter-desktop/main.py
 ```
