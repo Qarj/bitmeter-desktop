@@ -11,6 +11,7 @@ Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experim
 ![Screenshot1](resources/Screenshot1.png?raw=true "Screenshot 1")
 ![Screenshot2](resources/Screenshot2.png?raw=true "Screenshot 2")
 ![Screenshot3](resources/Screenshot3.png?raw=true "Screenshot 3")
+![Screenshot4](resources/Screenshot4.png?raw=true "Screenshot 4 - Transparency")
 
 # Installation on Ubuntu 18.04
 
