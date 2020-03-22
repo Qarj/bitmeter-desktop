@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 The Prefs class is used to contain the users preferences, such as colour selection, and the size
@@ -7,11 +7,12 @@ and position of the graph. Prefs
 
 import wx
 
+
 class Prefs():
     def __init__(self, db, defaults):
-        self.db       = db
+        self.db = db
         self.defaults = defaults
-        self.prefs    = None
+        self.prefs = None
 
     def Save(self):
       # Save the current set of prefs to the database
@@ -21,13 +22,13 @@ class Prefs():
         if self.prefs == None:
           # This is the first time we have accessed a value, so read from the database
             self.prefs = self.db.GetPrefs()
-        
+
         val = self.prefs.get(name)
         if val == None:
             val = self.defaults.get(name)
-            
+
         return val
-        
+
     def GetNum(self, name):
       # Convert the named value into a number and return
         val = self.Get(name)
@@ -35,25 +36,25 @@ class Prefs():
             return int(val)
         else:
             return None
-        
+
     def GetCol(self, name):
       # Convert the named value into a colour and return
         val = self.GetObj(name)
         if val != None:
             col = wx.Colour()
-            col.Set(val[0],val[1],val[2])
+            col.Set(val[0], val[1], val[2])
             return col
         else:
-            return None    
-            
+            return None
+
     def GetObj(self, name):
       # Eval the named value and return the result
         val = self.Get(name)
         if val != None:
             return eval(val)
         else:
-            return None    
-                
+            return None
+
     def SetObj(self, name, value):
       # Store the name/value pair
         self.prefs[name] = str(value)
