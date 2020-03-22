@@ -44,7 +44,7 @@ class Db:
         preModPrefs = self.GetPrefs()
 
         c = self.cn.cursor()
-        for k, v in vals.iteritems():
+        for k, v in vals.items():
             keyWithPrefix = self.prefsPrefix + k
             originalValue = preModPrefs.get(k)
             if originalValue == None:

@@ -1,8 +1,8 @@
-# BitMeter Desktop 0.2.0
+# BitMeter Desktop 0.2.1
 
 This is a fork of https://github.com/codebox/bitmeteros-python-client
 
-It has been updated to work with wxPython 4.0.6 and Python 3.7.
+It has been updated to work with wxPython 4.0.7 and Python 3.7.
 
 Tested with Ubuntu 18.04.
 
@@ -22,7 +22,7 @@ Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experim
 -   transparency enabled for Linux
 -   desktop shortcut included with icon
 -   default background colour is now black
--   supports wxPython 4.0.6
+-   supports wxPython 4.0.7
 -   all links fixed
     -   `'webbrowser' is not defined for bitmeteros url` error resolved
     -   link to web interface
@@ -86,15 +86,15 @@ chmod +x ~/Desktop/bitmeter-desktop.desktop
 
 ### Start on system boot
 
-```
-crontab -e
-```
+Press `Super` key.
 
-Add this line at the end
+Type `startup`, select `Startup Applications`.
 
-```
-@reboot python /usr/local/bin/bitmeter-desktop/main.py
-```
+Add a new startup program with these values:
+
+| Name | BitMeter Desktop |
+| Command | /usr/local/bin/bitmeter-desktop/main.py |
+| Comment | Qarj bitmeter-desktop |
 
 ### Transparency
 
