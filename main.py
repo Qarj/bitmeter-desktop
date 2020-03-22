@@ -65,9 +65,35 @@ class MyFrame(wx.Frame):
 
       # Restore the position of the graph from last time
         self.SetPosition(self.prefs.GetObj('position'))
-        # If you remove a monitor or replace with a lower resolution one, it is possible
-        # that the preferences specify an x,y position that is off screen
-        # self.SetPosition((100, 100))
+
+      # If you remove a monitor or replace with a lower resolution one, it is possible
+      # that the preferences specify an x,y position that is off screen
+      # This rough code will reset the position assuming that
+      #   - the monitors are placed left to right (not on top of each other)
+      #   - the rightmost monitor has the least resolution
+      #   - bitmeter-desktop client is on the rightmost screen normally
+        displays = (wx.Display(i) for i in range(wx.Display.GetCount()))
+        maxX = 0
+        maxY = 10000
+        for v in displays:
+            maxX += v.GetGeometry().GetSize().width
+            if maxY > v.GetGeometry().GetSize().height:
+                maxY = v.GetGeometry().GetSize().height
+
+        PROPORTION = 4  # Is allowed to be a little off screen
+        resetPosition = False
+        farRight = self.GetPosition().x + self.GetSize().width / PROPORTION
+        if farRight > maxX:
+            resetPosition = True
+            print('Reset position due to out of bounds x position')
+        farDown = self.GetPosition().y + self.GetSize().height / PROPORTION
+        if farDown > maxY:
+            resetPosition = True
+            print('Reset position due to out of bounds y position')
+
+        if resetPosition:
+            self.SetPosition((100, 100))
+
         self.OnPrefsUpdated()
 
         self.SetSizer(box)
@@ -95,9 +121,11 @@ class MyFrame(wx.Frame):
       # The menu can be accessed from the main graph, and from the tray icon
         self.popupmenu = wx.Menu()
         self.trayIcon = TrayIcon(self, self.popupmenu, icon)
-        self.showHideMain = self.popupmenu.Append(-1, _("Hide Graph"))
-        self.Bind(wx.EVT_MENU, self.ToggleGraph)
-        self.trayIcon.Bind(wx.EVT_MENU, self.ToggleGraph)
+
+      # Hide Graph option removed - no tray icon shown on Ubuntu 18.04, not relevant
+        # self.showHideMain = self.popupmenu.Append(-1, _("Hide Graph"))
+        # self.Bind(wx.EVT_MENU, self.ToggleGraph)
+        # self.trayIcon.Bind(wx.EVT_MENU, self.ToggleGraph)
 
       # Menu item to open the Options dialog
         options = self.popupmenu.Append(-1, _("Options"))
@@ -219,6 +247,7 @@ class MyFrame(wx.Frame):
             pos = event.GetPosition()
             displacement = self._panelDownPos - pos
             self.SetPosition(self.GetPosition() - displacement)
+            print('pos:', self.GetPosition())
 
     def OnPanelUp(self, event):
       # Stop dragging the window

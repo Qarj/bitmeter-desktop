@@ -15,6 +15,6 @@ ExampleFrame(None)
 
 displays = (wx.Display(i) for i in range(wx.Display.GetCount()))
 for v in displays:
-    print("Display", v.GetGeometry().GetSize())
+    print("Display", v.GetGeometry().GetSize().width)
 
 app.MainLoop()
