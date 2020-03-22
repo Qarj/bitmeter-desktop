@@ -18,7 +18,7 @@ from about import AboutDialog
 from db import Db
 from options import OptionsDialog
 
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 BYTES_PER_K = 1024
 _ = gettext.gettext
 

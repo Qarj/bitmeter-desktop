@@ -1,4 +1,4 @@
-# BitMeter Desktop 0.2.1
+# BitMeter Desktop 0.2.2
 
 This is a fork of https://github.com/codebox/bitmeteros-python-client
 
@@ -23,6 +23,8 @@ Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experim
 -   desktop shortcut included with icon
 -   default background colour is now black
 -   supports wxPython 4.0.7
+-   `Hide Graph` menu item removed - not relevant for Ubuntu 18.04 Gnome
+-   rough code added to detect if likely off screen due to monitor changes
 -   all links fixed
     -   `'webbrowser' is not defined for bitmeteros url` error resolved
     -   link to web interface
