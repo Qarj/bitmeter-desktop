@@ -41,35 +41,21 @@ Test by navigating to http://localhost:2605/index.html
 
 accept MS Eula by using TAB key and ENTER
 
-<<<<<<< HEAD
-```sh
-sudo apt install make gcc libgtk-3-dev libwebkitgtk-dev libwebkitgtk-3.0-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python-gst-1.0 python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
-```
-
-Install pathlib2 dependency
-
-```sh
-pip install pathlib2
-=======
 Ubuntu 18.04
-```
+
+```sh
 sudo apt install make gcc libgtk-3-dev libwebkitgtk-dev libwebkitgtk-3.0-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python-gst-1.0 python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
 ```
 
 Ubuntu 20.04
-```
+
+```sh
 sudo apt install python3-pip make gcc libgtk-3-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
->>>>>>> 67a93ea7b1b507788933864c4e6b0e9a5adcfd15
 ```
 
 Takes 5-10 mins, installed version 4.1.1 - March 2022
 
-<<<<<<< HEAD
 ```sh
-=======
-```
-sudo apt install python3-pip
->>>>>>> 67a93ea7b1b507788933864c4e6b0e9a5adcfd15
 sudo pip3 install wxpython
 .
 Collecting wxpython
@@ -110,8 +96,9 @@ Type `startup`, select `Startup Applications`.
 
 Add a new startup program with these values:
 
-| Name    | BitMeter Desktop                        |
+| Field   | Value                                   |
 | ------- | --------------------------------------- |
+| Name    | BitMeter Desktop                        |
 | Command | /usr/local/bin/bitmeter-desktop/main.py |
 | Comment | Qarj bitmeter-desktop                   |
 
