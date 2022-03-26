@@ -41,19 +41,19 @@ Test by navigating to http://localhost:2605/index.html
 
 accept MS Eula by using TAB key and ENTER
 
-```
+```sh
 sudo apt install make gcc libgtk-3-dev libwebkitgtk-dev libwebkitgtk-3.0-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python-gst-1.0 python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
 ```
 
 Install pathlib2 dependency
 
-```
+```sh
 pip install pathlib2
 ```
 
-Takes 5-10 mins, installed version 4.0.7 - March 2020
+Takes 5-10 mins, installed version 4.1.1 - March 2022
 
-```
+```sh
 sudo pip3 install wxpython
 .
 Collecting wxpython
@@ -71,7 +71,7 @@ Successfully installed pillow-7.0.0 wxpython-4.0.7.post2
 
 ### Clone project
 
-```
+```sh
 cd /usr/local/bin
 sudo git clone https://github.com/Qarj/bitmeter-desktop.git
 cd bitmeter-desktop
@@ -81,7 +81,7 @@ sudo find . -type f -exec chmod a+rw {} \;
 
 ### Set up desktop icon
 
-```
+```sh
 cp /usr/local/bin/bitmeter-desktop/bitmeter-desktop.desktop ~/Desktop
 chmod +x ~/Desktop/bitmeter-desktop.desktop
 ```
@@ -94,9 +94,10 @@ Type `startup`, select `Startup Applications`.
 
 Add a new startup program with these values:
 
-| Name | BitMeter Desktop |
+| Name    | BitMeter Desktop                        |
+| ------- | --------------------------------------- |
 | Command | /usr/local/bin/bitmeter-desktop/main.py |
-| Comment | Qarj bitmeter-desktop |
+| Comment | Qarj bitmeter-desktop                   |
 
 ### Transparency
 
@@ -108,6 +109,6 @@ OK (bottom left button). It will be remembered for the rest of the session only.
 
 ### Start from command line
 
-```
-python /usr/local/bin/bitmeter-desktop/main.py
+```sh
+python3 /usr/local/bin/bitmeter-desktop/main.py
 ```
