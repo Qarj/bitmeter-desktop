@@ -47,28 +47,33 @@ Ubuntu 18.04
 sudo apt install make gcc libgtk-3-dev libwebkitgtk-dev libwebkitgtk-3.0-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python-gst-1.0 python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
 ```
 
-Ubuntu 20.04
+Ubuntu 20.04, Ubuntu 22.04
 
 ```sh
 sudo apt install python3-pip make gcc libgtk-3-dev libgstreamer-gl1.0-0 freeglut3 freeglut3-dev python3-gst-1.0 libglib2.0-dev ubuntu-restricted-extras libgstreamer-plugins-base1.0-dev
 ```
 
-Takes 5-10 mins, installed version 4.1.1 - March 2022
+Takes 5-10 mins, installed version 4.2.1 - Sept 2023
 
 ```sh
-sudo pip3 install wxpython
+time sudo pip3 install wxpython
 .
 Collecting wxpython
-  Downloading https://files.pythonhosted.org/packages/b9/8b/31267dd6d026a082faed35ec8d97522c0236f2e083bf15aff64d982215e1/wxPython-4.0.7.post2.tar.gz (68.9MB)
-    100% |████████████████████████████████| 68.9MB 2.5MB/s
-Collecting pillow (from wxpython)
-  Downloading https://files.pythonhosted.org/packages/f5/79/b2d5695d1a931474fa68b68ec93bdf08ba9acbc4d6b3b628eb6aac81d11c/Pillow-7.0.0-cp37-cp37m-manylinux1_x86_64.whl (2.1MB)
-    100% |████████████████████████████████| 2.1MB 50.8MB/s
-Requirement already satisfied: six in /home/tim/.local/lib/python3.7/site-packages (from wxpython) (1.13.0)
-Requirement already satisfied: numpy in /usr/local/lib/python3.7/site-packages (from wxpython) (1.17.4)
-Installing collected packages: pillow, wxpython
-  Running setup.py install for wxpython ... done
-Successfully installed pillow-7.0.0 wxpython-4.0.7.post2
+  Downloading wxPython-4.2.1.tar.gz (73.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.7/73.7 MB 9.6 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: pillow in /usr/lib/python3/dist-packages (from wxpython) (9.0.1)
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from wxpython) (1.16.0)
+Collecting numpy
+  Downloading numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 13.4 MB/s eta 0:00:00
+Building wheels for collected packages: wxpython
+  Building wheel for wxpython (setup.py) ... done
+  Created wheel for wxpython: filename=wxPython-4.2.1-cp310-cp310-linux_x86_64.whl size=146717229 sha256=8c713041dcf71034f0f7c35e67554075c74369db335ccd3c9010c3ba45d6d54d
+  Stored in directory: /root/.cache/pip/wheels/12/f1/5a/d41ae7a67bafa57317841444cc6e3c9b745df4660e07b54c07
+Successfully built wxpython
+Installing collected packages: numpy, wxpython
+Successfully installed numpy-1.26.0 wxpython-4.2.1
 ```
 
 ### Clone project
