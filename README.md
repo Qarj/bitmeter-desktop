@@ -173,5 +173,5 @@ On Ubuntu 24.04, transparency works as expected.
 ### Start from command line
 
 ```sh
-python3 /usr/local/bin/bitmeter-desktop/main.py
+python3 /usr/local/bin/bitmeter-desktop/bitmeter-desktop.sh
 ```
