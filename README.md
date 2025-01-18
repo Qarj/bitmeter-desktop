@@ -26,7 +26,7 @@ Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experim
 -   transparency enabled for Linux
 -   desktop shortcut included with icon
 -   default background colour is now black
--   supports wxPython 4.0.7
+-   supports wxPython 4.2.2
 -   `Hide Graph` menu item removed - not relevant for Ubuntu 18.04 Gnome
 -   rough code added to detect if likely off screen due to monitor changes
 -   all links fixed
