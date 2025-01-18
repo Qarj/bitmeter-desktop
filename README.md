@@ -33,7 +33,7 @@ Desktop Client for [BitMeter OS](https://github.com/codebox/bitmeteros) (experim
     -   `'webbrowser' is not defined for bitmeteros url` error resolved
     -   link to web interface
 
-## Installation on Ubuntu 18.04, 20.04
+## Installation on Ubuntu 18.04, 20.04, 22.04, 24.04
 
 First download BitMeter OS v0.7.6 from https://codebox.net/pages/bitmeteros-downloads
 
