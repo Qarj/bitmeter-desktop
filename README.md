@@ -1,8 +1,12 @@
 # BitMeter Desktop 0.2.2
 
+Displays incoming and outgoing network (and internet) traffic in a small graph on the Gnome desktop.
+
+Requires x-org to work properly. On Wayland, you cannot move the graph.
+
 This is a fork of https://github.com/codebox/bitmeteros-python-client
 
-It has been updated to work with wxPython 4.0.7 and Python 3.7.
+It has been updated to work with wxPython 4.2.2 and Python 3.9.
 
 Tested with Ubuntu 18.04, 20.04, 22.04, 24.04.
 
@@ -54,6 +58,8 @@ Close and reopen your terminal.
 
 ### Install Python 3.9.21
 
+Use the exact version specified.
+
 ```sh
 conda create --name bitmeter python=3.9.21
 ```
@@ -87,6 +93,8 @@ Note there is not `freeglut3` package for Ubuntu 24.04.
 Takes 5-10 mins, installed version 4.2.2 - Jan 2025
 
 Check: https://wxpython.org/blog/2017-08-17-builds-for-linux-with-pip/index.html
+
+Use the exact version.
 
 ```sh
 conda activate bitmeter
@@ -146,11 +154,11 @@ Type `startup`, select `Startup Applications`.
 
 Add a new startup program with these values:
 
-| Field   | Value                                   |
-| ------- | --------------------------------------- |
-| Name    | BitMeter Desktop                        |
-| Command | /usr/local/bin/bitmeter-desktop/main.py |
-| Comment | Qarj bitmeter-desktop                   |
+| Field   | Value                                               |
+| ------- | --------------------------------------------------- |
+| Name    | BitMeter Desktop                                    |
+| Command | /usr/local/bin/bitmeter-desktop/bitmeter-desktop.sh |
+| Comment | Qarj bitmeter-desktop                               |
 
 ### Transparency
 
@@ -158,7 +166,9 @@ The only way I can get transparency to work on Ubuntu 18.04 is by right-clicking
 on the graph, select Options, change the Opacity % to a _*different*_ value then click
 OK (bottom left button). It will be remembered for the rest of the session only.
 
-# Reference
+On Ubuntu 24.04, transparency works as expected.
+
+## Reference
 
 ### Start from command line
 
