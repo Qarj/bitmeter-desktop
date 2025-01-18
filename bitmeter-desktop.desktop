@@ -3,7 +3,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/usr/local/bin/bitmeter-desktop/main.py
+Exec=/usr/local/bin/bitmeter-desktop/bitmeter-desktop.sh
 Icon=/usr/local/bin/bitmeter-desktop/resources/BitMeter-Desktop.png
 Path=/usr/local/bin/bitmeter-desktop/
 Name=BitMeter-Desktop
